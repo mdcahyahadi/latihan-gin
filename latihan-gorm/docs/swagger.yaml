@@ -1,0 +1,137 @@
+basePath: /
+definitions:
+  models.Product:
+    properties:
+      brand:
+        type: string
+      createdAt:
+        type: string
+      id:
+        description: gorm.Model
+        type: integer
+      name:
+        type: string
+      updatedAt:
+        type: string
+      userID:
+        type: integer
+    type: object
+  models.User:
+    properties:
+      createdAt:
+        type: string
+      email:
+        type: string
+      id:
+        description: gorm.Model
+        type: integer
+      products:
+        items:
+          $ref: '#/definitions/models.Product'
+        type: array
+      updatedAt:
+        type: string
+    type: object
+host: localhost:8080
+info:
+  contact:
+    email: soberkoder@swagger.io
+    name: API Support
+  description: This is a service for managing users and products
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: http://swagger.io/terms/
+  title: User and Product API
+  version: "1.0"
+paths:
+  /product/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: delete product by id
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Product'
+      summary: delete product
+      tags:
+      - products
+  /product/new-product:
+    post:
+      consumes:
+      - application/json
+      description: create new product data
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Product'
+      summary: create product
+      tags:
+      - products
+  /user/{id}:
+    get:
+      consumes:
+      - application/json
+      description: get user with certain id
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.User'
+      summary: get user by id
+      tags:
+      - users
+    patch:
+      consumes:
+      - application/json
+      description: update user with certain id
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.User'
+      summary: update user by id
+      tags:
+      - users
+  /user/new-user:
+    post:
+      consumes:
+      - application/json
+      description: create new user data
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.User'
+      summary: create user
+      tags:
+      - users
+  /user/user-product:
+    get:
+      consumes:
+      - application/json
+      description: get user with it's coresponding products
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.User'
+      summary: get all user with product
+      tags:
+      - users
+swagger: "2.0"

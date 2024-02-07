@@ -8,12 +8,13 @@ import (
 	"gorm.io/gorm"
 )
 
+// Product represents the model of a product
 type Product struct {
-	gorm.Model
-	ID        uint   `gorm "Primary Key"`
-	Name      string `gorm: "not null; type:varchar(191)"`
-	BRand     string `gorm: "not null; type:varchar(191)"`
-	UserID    uint   `gorm: "foreignkey:User`
+	// gorm.Model
+	ID        uint   `gorm:"Primary Key"`
+	Name      string `gorm:"not null; type:varchar(191)"`
+	BRand     string `gorm:"not null; type:varchar(191)"`
+	UserID    uint
 	CreatedAt time.Time
 	UpdatedAt time.Time
 }

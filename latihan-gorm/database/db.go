@@ -12,12 +12,11 @@ import (
 var (
 	host     = "localhost"
 	user     = "postgres"
-	password = "Merdeka171camcao@"
-	// password = "password"
-	port   = "5432"
-	dbname = "learning-gorm"
-	db     *gorm.DB
-	err    error
+	password = "password"
+	port     = "5432"
+	dbname   = "learning-gorm"
+	db       *gorm.DB
+	err      error
 )
 
 func GetDB() *gorm.DB {
