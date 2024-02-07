@@ -1,4 +1,4 @@
-module GIN
+module latihan-pertama
 
 go 1.21.6
 

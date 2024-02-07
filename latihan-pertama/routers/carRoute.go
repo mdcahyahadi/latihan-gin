@@ -1,7 +1,7 @@
 package routers
 
 import (
-	"GIN/controllers"
+	"latihan-pertama/controllers"
 
 	"github.com/gin-gonic/gin"
 )

@@ -1,6 +1,6 @@
 package main
 
-import "GIN/routers"
+import "latihan-pertama/routers"
 
 var PORT = ":8080"
 
